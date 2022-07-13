@@ -1,0 +1,63 @@
+<!-- This html file contains codes to display the success message after user adds a new device -->
+
+<!doctype html>
+<html>
+
+<head>
+  <!-- To link style.css file -->
+  <link type="text/css" href="css/style.css" rel="stylesheet">
+  
+  <!-- Page title -->
+  <title>Device Added!</title>
+</head>
+
+<body class="bg2">
+  <div class="container">
+  <h2> Device successfully added! </h2>
+
+    <!-- Display device name -->
+    <div>
+      Device Name: <u><%= name %></u>
+    </div>
+    
+    <!-- Display device type -->
+    <div>
+      Device Type: <u><%= devices %></u>
+    </div>
+
+    <!-- Display status -->
+    <div>
+      Status: <u><%= status %></u>
+    </div>
+
+    <!-- Display temperature only if the value is not null -->
+    <% if (temperature != null ) {%>
+    <div>
+      Temperature: <u><%= temperature %></u> °C
+    </div>
+    <% } %>
+
+    <!-- Display volume only if the value is not null -->
+    <% if (volume != null ) {%>
+    <div>
+      Volume: <u><%= volume %></u>
+    </div>
+    <% } %>
+
+    <!-- Display speed only if the value is not null -->
+    <% if (speed != null ) {%>
+    <div>
+      Speed: <u><%= speed %></u>
+    </div>
+    <% } %>
+    
+    <br>
+
+    <!-- "OK" button directs back to the All Devices page 
+    "Add another device" button direct to the add device page -->
+    <a href="/viewDevices"><button class="button">OK</button></a>
+    <a href="/addDevice"><button class="button">Add another device</button></a>
+  
+  </div>
+</body>
+</html>

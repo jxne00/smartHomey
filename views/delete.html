@@ -1,0 +1,51 @@
+<!-- This html file contains codes to display the delete device page
+(clicking on the "Delete Device" tab in the navbar) -->
+
+<!doctype html>
+<html>
+
+<head>
+  <!-- To link external stylesheet and style.css file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" href="css/style.css" rel="stylesheet">
+
+  <!-- Page Title -->
+  <title> Delete a device </title>
+
+</head>
+
+<body class="bg2">
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/viewDevices">View Devices</a>
+    <a href="/addDevice">Add Device</a>
+    <a class="active" href="/deleteD">Delete Device</a>
+    <a href="/search">Search</a>
+    <div class="logo"> SmartHomey <i class="fa fa-home"></i></div>
+  </div>
+
+<div class="container">
+
+  <h1>Delete a device</h1>
+
+  <!-- dropdown list containing all added devices for the user to select a device to delete  -->
+  <form method="POST" action="/deleteD">
+
+    Delete a Device:
+    <select name="name">
+      <option value="" disabled selected>Select a Device</option>
+    <% availableDevices.forEach(function(device){ %>
+      <option name="<%= device.device_name %>" value="<%= device.device_name %>"><%= device.device_name %></option>
+    <% }) %>
+      </select><br>
+
+    <!-- DELETE Button shows confimation message when clicked -->
+    <input type="submit" value="DELETE" style="margin-top: 60px;"
+    onclick="return confirm('Are you sure you want to delete this device?')"/>
+  </form>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+  /* Style for the body */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(159, 159, 159, 0.813);
+  }
+
+  /* Homepage background (index.html) */
+  .home-bg {
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    url('https://media.istockphoto.com/vectors/smartphones-security-controls-vector-futuristic-smart-home-technology-vector-id1070079738?k=20&m=1070079738&s=612x612&w=0&h=dWgX33rEQ0hI65XnNLlJWurwytL9NqptOHmc5v8HcBU=');
+  }
+
+  /* About page background (about.html) */
+  .bg2 {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.istockphoto.com/photos/living-room-interior-in-loft-industrial-style-picture-id1271897890?k=20&m=1271897890&s=612x612&w=0&h=HdUZ5RSZ6lR5z-TpYlHs7EtRmi90piMqnigk_DagFY8=');
+  }
+
+  /* Container for About Page (about.html) */
+  .about-container {
+    background: rgba(215, 215, 215, 0.756);
+    position:relative;
+    height:500px;
+    width:70%;
+    margin:0 auto;
+    margin-top: 3%;
+    border-radius: 10px;
+  }
+
+  .container {
+    margin: auto;
+    margin-top: 30px;
+    width: 55%;
+    border: 1px solid #000000;
+    padding: 15px;
+    padding-bottom: 60px;
+    border-radius: 5px;
+    background-color: rgba(223, 223, 223, 0.811);
+  }
+
+  /* Navigation Bar */
+  .navbar {
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+  }
+
+  /* href links on the navbar */
+  .navbar a {
+    float: left;
+    color: #f2f2f2;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  /* Hovering over a link on the navbar */
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* After clicking on a link in navbar */
+  .navbar a.active {
+    background-color: #a44949;
+    color: white;
+  }
+
+  /* MySmartHome logo (on the far right of the navbar) */
+  .logo {
+    float: right;
+    color: #db9494;
+    padding: 13px 16px;
+    font-size: 21px;
+    font-weight: bold;
+  }
+
+  /* Page Content */
+  .content {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  table {
+    border-spacing: 0px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:white;
+  }
+
+  td,th {
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.568);
+  }
+
+  /* header of a table */
+  th {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  /* Edit and Delete button, Submit button */
+  .button, input[type=submit] {
+    color: #ffffff;
+    background-color: #212121;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .button1 {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .button:hover, input[type=submit]:hover {
+    background-color: #d4d4d4;
+    color: black;
+  }
+  
+  /* Submit button for addDevice and editDevice*/
+  input[type=submit] {
+    width: 25%;
+    padding: 8px 10px;
+    font-size: 16px;
+    margin-top: 16px;
+  }
+
+  /* index.html text */
+  .right {
+    position: relative;
+    text-align: center;
+    padding-left: 40%;   
+  }
+
+  /* Image in index.html */
+  .image1 {
+    width: 300px;
+    height: 290px;
+    margin-top: 9%;
+  }
+
+  /* align items in a list */
+  ul {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+
+  a { 
+    text-decoration: none;
+    color: #000000; 
+  }
+
+  /* Image in view.html */
+  .image2 {
+    margin-left: 10%;
+    float:left; 
+    height:120px;
+    width:120px;	
+  }
+
+  /* styling <p> */
+  p {
+    font-size:17px;
+  }
+
+  /* remove space between <p> and <ul> in about.html */
+  p + ul {
+    margin-top: -10px;
+  }
+
+  input[readonly] {
+    background-color:rgb(214, 214, 214);
+  }

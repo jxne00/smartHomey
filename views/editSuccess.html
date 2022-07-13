@@ -1,0 +1,58 @@
+<!-- This html file contains code to display the success message after user updates a device -->
+
+<!doctype html>
+<html>
+
+<head>
+  <!-- To link style.css file -->
+  <link type="text/css" href="css/style.css" rel="stylesheet">
+  
+  <!-- Page title -->
+  <title>Device Edited!</title>
+</head>
+
+<body class="bg2">
+  <div class="container">
+    <h2> Device Successfully Updated! </h2>
+    <!-- Display the device name, type, status, temperature, volume and speed -->
+    <div>
+      Device Name: <%= name %>
+    </div>
+
+    <div>
+      Device Type: <%= devices %>
+    </div>
+
+    <div>
+      Status: <u><%= status %></u>
+    </div>
+
+    <!-- Display temperature only if value is not null -->
+    <% if (temperature != null ) {%>
+      <div>
+        Temperature: <u><%= temperature %></u> °C
+      </div>
+    <% } %>
+
+    <!-- Display volume only if value is not null -->
+    <% if (volume != null ) {%>
+      <div>
+        Volume: <u><%= volume %></u>
+      </div>
+    <% } %>
+  
+    <!-- Display speed only if value is not null -->
+    <% if (speed != null ) {%>
+      <div>
+        Speed: <u><%= speed %></u>
+      </div>
+    <% } %>
+    <br>
+    
+    <!-- "OK" button links back to the All Devices page -->
+    <a href="/viewDevices"><button class="button">OK</button></a>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!-- This html file contains codes to display the search page which takes in a keyword -->
+
+<!doctype html>
+<html>
+  <head>
+    <!-- To link external stylesheet and style.css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+
+    <!-- Page title -->
+    <title> Search </title>
+  </head>
+
+  <body class="bg2">
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/viewDevices">View Devices</a>
+    <a href="/addDevice">Add Device</a>
+    <a href="/deleteD">Delete Device</a>
+    <a class="active" href="/search">Search</a>
+    <div class="logo"> SmartHomey <i class="fa fa-home"></i></div>
+  </div>
+
+    <div class="container">
+      <h1> Search for a device <i class="fa fa-search" style="font-size:26px"></i></h1>
+      <p> Enter a keyword to search. <br />
+        Or <a href="/viewDevices"> <u>click here</u></a> to view the list of devices. </p>
+
+      <!-- GET request used to get a keyword from the user -->
+      <form action="/search-result" method="GET">
+        <input type = "text" id="search-box" type="text" name="keyword" placeholder="Keyword" style="height:30px; width:200px;"> <br/><br/>
+        <input type="submit" value="Search" >
+      </form><br/>
+
+    </div>
+
+  </body>
+</html>

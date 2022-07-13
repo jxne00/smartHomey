@@ -1,0 +1,89 @@
+<!-- 
+This html file contains codes to display the Add device page for uses to add a new device.
+The temperature, volume, and speed fields will be hidden based on the selection of Device type dropdown field 
+ -->
+
+<!doctype html>
+<html>
+
+<head>
+  <!-- To link external stylesheet and style.css file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" href="css/style.css" rel="stylesheet">
+  <!-- To link script.js file containing a function to show and hide fields according to device type -->
+  <script src="script/script.js"></script> 
+
+  <!-- Page title -->
+  <title> Add Device </title>
+</head>
+
+<body class="bg2">
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/viewDevices">View Devices</a>
+    <a class="active" href="/addDevice">Add Device</a>
+    <a href="/deleteD">Delete Device</a>
+    <a href="/search">Search</a>
+    <div class="logo"> SmartHomey <i class="fa fa-home"></i></div>
+  </div>
+
+<div class="container">
+  <h1> Add New Device </h1>
+
+  <!-- POST action used to collect form data -->
+  <form method="POST" action="/addDevice">
+
+    <!-- Name of Device (maximum 50 characters, special characters not allowed) -->
+    <label> Device Name: </label>
+    <input type="text" id="first" name="name" placeholder="Name" maxlength="50" required
+    pattern="[a-zA-Z0-9 ]{0,50}" oninvalid="this.setCustomValidity('No special characters allowed')" oninput="this.setCustomValidity('')" /><br /><br />
+
+    <!-- 6 different pre-defined device types displayed using a dropdown list -->
+    <label> Device Type: </label>
+    <select name="devices" onchange="showHideInfo(this.value)" required>
+      <option value="" disabled selected>Select a Device Type</option>
+      <option value="Light">Light</option>
+      <option value="Camera">Camera</option>
+      <option value="Air Conditioner">Air Conditioner</option>
+      <option value="Television">Television</option>
+      <option value="Refrigerator">Refrigerator</option>
+      <option value="Fan">Fan</option>
+      <option value="Speaker">Speaker</option>
+    </select>
+    <br /><br />
+
+    <!-- Radio Buttons for Status (On/Off) -->
+    <label> Status: </label>
+    <input type="radio" id="third-one" name="status" value="On" required/>
+    <label for="On">On</label>
+    <input type="radio" id="third-two" name="status" value="Off"/>
+    <label for="Off">Off</label><br /><br />
+
+    <!-- Temperature (maximum of 40 and minimum of -25 °C) -->
+    <div id="temp">
+      <label> Temperature: </label>
+      <input type="number" min="-40" max="40" name="temperature" step="1"/> °C<br /><br />
+    </div>
+
+    <!-- Volume (maximum of 100 and minimum of 0 dB)-->
+    <div id="vol">
+      <label> Volume: </label>
+      <input type="number" min="0" max="100" name="volume" step="1"/><br /><br />
+    </div>
+
+    <!-- Speed (maximum of 100 and minimum of 0 RPM)-->
+    <div id="spd">
+      <label> Speed: </label>
+      <input type="number" min="0" max="10" name="speed" step="1"/><br /><br />
+    </div>
+
+    <!-- Submit Button -->
+    <input type="submit" value="submit" />
+    
+  </form>
+  </div>
+</body>
+
+</html>

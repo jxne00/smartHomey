@@ -1,0 +1,112 @@
+<!-- This html file contains codes to display the All Devices page which displays all added devices in a table -->
+
+<!doctype html>
+<html>
+
+<head>  
+  <!-- To link external stylesheet and style.css file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" href="css/style.css" rel="stylesheet">
+  <!-- To link script.js file to count the number of rows in the table -->
+  <script src="script/script.js"></script> 
+
+  <!-- Page title -->
+  <title>List of Devices</title>
+</head>
+
+<!-- Execute the count() function after the page loads -->
+<body class="bg2" onload="count()">
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a class="active" href="/viewDevices">View Devices</a>
+    <a href="/addDevice">Add Device</a>
+    <a href="/deleteD">Delete Device</a>
+    <a href="/search">Search</a>
+    <div class="logo"> SmartHomey <i class="fa fa-home"></i></div>
+  </div>
+
+  <span style="color: white;">
+    <!-- Title -->
+    <h1> All Devices </h1>
+    
+    <!-- Display a count of the number of rows in the table using a javascript function
+    "count()" which can be found in public\script\script.js -->
+    <h3> (Total number of devices: <span id="value"></span>)</h3>
+  </span>
+
+  <!-- Table to display all added devices -->
+  <table id="table1"> 
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Temperature <span style="color: rgb(214, 214, 214);">(°C)</span></th>
+        <th>Volume</th>
+        <th>Speed</th>
+        <th></th><th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% availableDevices.forEach(function(device){ %>
+      <tr>
+        <!-- Display device name, and link to the view.html page displaying the device settings of that device -->
+        <td>
+          <a href="/view?name=<%= device.device_name %>">
+            <%= device.device_name %>
+          </a>
+        </td>
+
+        <!-- Display the device type -->
+        <td><%= device.device_type %></td>
+        
+        <!-- Display status in green if status is "On" and red if "Off" -->
+        <% if (device.status=="On" ) {%>
+        <td style="color:green;"><b><%= device.status %></b></td>
+        <% } else { %>
+        <td style="color:red;"><b><%= device.status %></b></td>
+        <% } %>
+        
+        <!-- Display '-' if temperature is null. Otherwise, display the value -->
+        <% if (device.temperature != null ) {%>
+          <td><%= device.temperature %></td>
+        <% } else { %>
+          <td> - </td>
+        <% } %>
+        
+        <!-- Display '-' if volume is null. Otherwise, display the value -->
+        <% if (device.volume != null ) {%>
+          <td><%= device.volume %></td>
+        <% } else { %>
+          <td> - </td>
+        <% } %>
+      
+        <!-- Display '-' if speed is null. Otherwise, display the value -->
+        <% if (device.speed != null ) {%>
+          <td><%= device.speed %></td>
+        <% } else { %>
+          <td> - </td>
+        <% } %>
+        
+        <!-- EDIT button linking to the edit page -->
+        <td><a href="/edit?name=<%= device.device_name %>">
+          <button class="button">EDIT</button>
+        </a></td>
+        
+        <!-- DELETE button -->
+        <td><a href="/delete?name=<%= device.device_name %>" 
+          onclick="return confirm('Are you sure you want to delete <%= device.device_name %>?')">
+          <button class="button">DELETE</button>
+        </a></td>
+
+      <% }) %>
+    </tr>
+    </tbody>
+  </table><br/>
+
+</body>
+
+</html>

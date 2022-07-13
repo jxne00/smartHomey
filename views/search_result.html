@@ -1,0 +1,52 @@
+<!-- This html file contains codes to display the search results -->
+
+<!doctype html>
+<html>
+
+<head>
+  <!-- To link external stylesheet and style.css file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" href="css/style.css" rel="stylesheet">
+
+  <!-- Page Title -->
+  <title>Search Results</title>
+</head>
+
+<body class="bg2">
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/viewDevices">View Devices</a>
+    <a href="/addDevice">Add Device</a>
+    <a href="/deleteD">Delete Device</a>
+    <a class="active" href="/search">Search</a>
+    <div class="logo"> SmartHomey <i class="fa fa-home"></i></div>
+  </div>
+
+  <div class="container">
+
+  <!-- back button to go back to the previous page -->
+  <button style="float:left;" onclick="history.back()">Back</button><br>
+  
+  <!-- <%= userInput %> contains the keyword enetered by user in the search page -->
+  <h1> Displaying search results for <%= userInput %></h1>
+  
+  <!-- If the search yield no results, display "No results found" -->
+  <% if (availableDevices.length == 0) {%>
+    <p> No results found. </p>
+  <% } %>
+  
+  <!-- Display the name of devices that contains the search keyword -->
+  <% availableDevices.forEach(function(device){ %>
+  <ul>
+    <li> <a href="/view?name=<%= device.device_name %>">
+      <%= device.device_name %></a>
+    </li>
+  </ul>
+  <% }) %>
+
+</div>
+</body>
+
+</html>
