@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const app = express();
 const mysql = require("mysql");
 const port = 8089;
-//const port = 8099;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));  // for css/script
