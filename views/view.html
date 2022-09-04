@@ -34,57 +34,57 @@
       
       <!-- Display different images depending on the device type. All images are from https://www.flaticon.com/ -->
       <% if (device.device_type == 'Light') {%>
-        <img src="https://cdn-icons.flaticon.com/png/512/2988/premium/2988036.png?token=exp=1656735501~hmac=a9d3696070ed725b9a7247f13b5c40fc" 
+        <img src="/images/lightbulb.png" 
         alt="image of a lightbulb" class="image2">
       <% } %>
 
       <% if (device.device_type == 'Camera') {%>
-        <img src="https://cdn-icons-png.flaticon.com/512/394/394620.png" 
+        <img src="/images/camera.png" 
         alt="image of a camera" class="image2">
       <% } %>
 
       <% if (device.device_type == 'Air Conditioner') {%>
-        <img src="https://cdn-icons-png.flaticon.com/512/1530/1530481.png" 
+        <img src="/images/aircon.png" 
         alt="image of an air conditioner" class="image2">
       <% } %>
 
       <% if (device.device_type == 'Television') {%>
-        <img src="https://cdn-icons-png.flaticon.com/512/3159/3159513.png" 
+        <img src="/images/television.png" 
         alt="image of a television" class="image2">
       <% } %>
 
       <% if (device.device_type == 'Refrigerator') {%>
-        <img src="https://cdn-icons.flaticon.com/png/512/3073/premium/3073833.png?token=exp=1656735393~hmac=294623ac9cb0bf4cb1981ae279d13533" 
+        <img src="/images/fridge.png" 
         alt="image of a refrigerator" class="image2">
       <% } %>
       
       <% if (device.device_type == 'Fan') {%>
-        <img src="https://cdn-icons-png.flaticon.com/512/95/95252.png" 
+        <img src="/images/fan.png" 
         alt="image of a fan" class="image2">
       <% } %>
 
       <% if (device.device_type == 'Speaker') {%>
-        <img src="https://cdn-icons.flaticon.com/png/512/2061/premium/2061136.png?token=exp=1656738159~hmac=9751521898bb1c5418ef1d5f9ecb86e9" 
+        <img src="/images/speaker.png" 
         alt="image of a speaker" class="image2">
       <% } %>
       
       <br><br>
-     <div style="font-size:19px; padding-right:20%;">
+    <div style="font-size:19px; padding-right:20%;">
       Status: <%= device.status %>
       <br>
 
       <!-- Only display the temperature volume and/or speed if the value is not null -->
-      <% if (device.temperature != null ) {%>
+      <% if (device.temperature != null) {%>
       Temperature: <%= device.temperature %> °C
       <br>
       <% } %>
 
-      <% if (device.volume != null ) {%>
+      <% if (device.volume != null) {%>
       Volume: <%= device.volume %>
       <br>
       <% } %>
       
-      <% if (device.speed != null ) {%>
+      <% if (device.speed != null) {%>
       Speed: <%= device.speed %>
       <% } %>  
     </div>
