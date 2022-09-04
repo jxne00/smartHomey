@@ -1,0 +1,17 @@
+show databases;
+show tables;
+
+create database smartHomey;
+use smartHomey;
+
+create table devices(
+    device_name VARCHAR(50) NOT NULL,
+    device_type VARCHAR(30) NOT NULL,
+    status VARCHAR(3) NOT NULL,
+    temperature INT NULL,
+    volume INT NULL,
+    speed INT NULL,
+    PRIMARY KEY(device_name)
+);
+
+SELECT * FROM devices;
