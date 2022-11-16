@@ -1,6 +1,3 @@
-show databases;
-show tables;
-
 create database smartHomey;
 use smartHomey;
 
