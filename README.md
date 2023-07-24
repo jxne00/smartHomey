@@ -6,11 +6,13 @@ smartHomey is a Node.js web application that allows users to manage devices in t
 
 1. Setup the SQL database using the sql script `db_setup/setup.sql`. (run command `source db_setup/setup.sql`).
 
-2. Install the necessary packages using `npm install`.
+2. git clone this repo using `git clone https://github.com/jxne00/smartHomey.git`
 
-3. Start the web app using `node index.js`.
+3. `cd smartHomey` and install the necessary packages using `npm install`.
 
-4. Navigate to "localhost:8089" to view the web app.
+4. Start the web app using `node index.js`.
+
+5. Navigate to "localhost:8089" to view the web app.
 
 ## Demo
 
